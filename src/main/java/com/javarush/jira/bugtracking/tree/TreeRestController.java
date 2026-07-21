@@ -9,6 +9,7 @@ import com.javarush.jira.bugtracking.sprint.to.SprintTo;
 import com.javarush.jira.bugtracking.task.TaskRepository;
 import com.javarush.jira.bugtracking.task.mapper.TaskMapper;
 import com.javarush.jira.common.util.Util;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+@Tag(name = "Tree", description = "Tree of projects, sprints, and tasks")
 @RestController
 @RequiredArgsConstructor
 @Slf4j

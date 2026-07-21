@@ -1,8 +1,38 @@
-spring.cache.type: none
+﻿spring.cache.type: none
 spring:
-  init:
-    mode: always
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/changelog-test.sql
+      data-locations: classpath:data.sql
+  liquibase:
+    enabled: false
   datasource:
-    url: jdbc:postgresql://localhost:5433/jira-test
-    username: jira
-    password: JiraRush
+      url: jdbc:h2:mem:jira-test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;NON_KEYWORDS=VALUE
+      username: sa
+      password:
+      driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+  mail:
+    host: localhost
+    port: 3025
+    username: test@test.com
+    password: test
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: test-github-id
+            client-secret: test-github-secret
+          google:
+            client-id: test-google-id
+            client-secret: test-google-secret
+          yandex:
+            client-id: test-yandex-id
+            client-secret: test-yandex-secret
+          gitlab:
+            client-id: test-gitlab-id
+            client-secret: test-gitlab-secret

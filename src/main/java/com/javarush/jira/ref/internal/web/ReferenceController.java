@@ -6,6 +6,7 @@ import com.javarush.jira.ref.ReferenceService;
 import com.javarush.jira.ref.internal.Reference;
 import com.javarush.jira.ref.internal.ReferenceMapper;
 import com.javarush.jira.ref.internal.ReferenceRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +21,7 @@ import java.util.Map;
 import static com.javarush.jira.common.BaseHandler.createdResponse;
 import static com.javarush.jira.common.util.validation.ValidationUtil.checkNew;
 
+@Tag(name = "ReferenceData", description = "Reference Materials")
 @RestController
 @RequestMapping(value = ReferenceController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor

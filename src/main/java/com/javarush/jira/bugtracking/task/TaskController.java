@@ -10,6 +10,7 @@ import com.javarush.jira.bugtracking.task.to.TaskToFull;
 import com.javarush.jira.bugtracking.tree.ITreeNode;
 import com.javarush.jira.common.util.Util;
 import com.javarush.jira.login.AuthUser;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Nullable;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
@@ -27,6 +28,7 @@ import java.util.List;
 import static com.javarush.jira.common.BaseHandler.createdResponse;
 
 @Slf4j
+@Tag(name = "Tasks", description = "CRUD-operation for tasks")
 @RestController
 @RequestMapping(value = TaskController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor

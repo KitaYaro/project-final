@@ -2,6 +2,7 @@ package com.javarush.jira.bugtracking.project;
 
 import com.javarush.jira.bugtracking.Handlers;
 import com.javarush.jira.bugtracking.project.to.ProjectTo;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import static com.javarush.jira.bugtracking.ObjectType.PROJECT;
 import static com.javarush.jira.common.BaseHandler.REST_URL;
 import static com.javarush.jira.common.BaseHandler.createdResponse;
 
+@Tag(name = "Projects", description = "CRUD - operation for projects")
 @RestController
 @RequestMapping(value = REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor

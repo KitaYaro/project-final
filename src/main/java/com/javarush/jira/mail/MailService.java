@@ -29,7 +29,6 @@ import java.util.concurrent.*;
 @Service
 @RequiredArgsConstructor
 public class MailService {
-    private static final Locale LOCALE_RU = Locale.forLanguageTag("ru");
     private static final String OK = "OK";
 
     private final MailCaseRepository mailCaseRepository;
@@ -45,6 +44,9 @@ public class MailService {
 
     @Value("${spring.mail.username}")
     private String email;
+
+    @Value("${app.mail.default-locale:ru}")
+    private String defaultLocale;
 
     public static boolean isOk(String result) {
         return OK.equals(result);
@@ -79,7 +81,8 @@ public class MailService {
     }
 
     private String getContent(String template, Map<String, Object> params) {
-        Context context = new Context(LOCALE_RU, params);
+        Locale locale = Locale.forLanguageTag(defaultLocale);
+        Context context = new Context(locale, params);
         return templateEngine.process(template, context);
     }
 

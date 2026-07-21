@@ -1,0 +1,30 @@
+# template for server
+app:
+  host-url: http://localhost
+spring:
+  datasource:
+    url: ${JIRA_DB_URL:jdbc:postgresql://localhost:5432/jira}
+    username: ${JIRA_DB_USERNAME:jira}
+    password: ${JIRA_DB_PASSWORD:JiraRush}
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-secret: ${JIRA_GITHUB_SECRET:}
+          google:
+            client-secret: ${JIRA_GOOGLE_SECRET:}
+          yandex:
+            client-secret: ${JIRA_YANDEX_SECRET:}
+          gitlab:
+            client-secret: ${JIRA_GITLAB_SECRET:}
+
+  mail:
+    username: ${JIRA_MAIL_USER:?Set JIRA_MAIL_USER}
+    password: ${JIRA_MAIL_PASSWORD:?Set JIRA_MAIL_PASSWORD}
+
+  springdoc:
+    api-docs:
+      enabled: false
+    swagger-ui:
+      enabled: false

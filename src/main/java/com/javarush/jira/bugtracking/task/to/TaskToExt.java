@@ -10,6 +10,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -28,13 +29,16 @@ public class TaskToExt extends TaskTo {
     @Positive
     Integer estimate;
 
+    Set< String> tags = Set.of();
+
     public TaskToExt(Long id, String code, String title, String description, String typeCode, String statusCode, String priorityCode,
-                     LocalDateTime updated, Integer estimate, Long parentId, long projectId, Long sprintId) {
+                     LocalDateTime updated, Integer estimate, Long parentId, long projectId, Long sprintId, Set<String> tags) {
         super(id, code, title, typeCode, statusCode, parentId, projectId, sprintId);
         this.description = description;
         this.priorityCode = priorityCode;
         this.updated = updated;
         this.estimate = estimate;
+        this.tags = tags;
     }
 
     @Override
@@ -50,6 +54,7 @@ public class TaskToExt extends TaskTo {
                 Objects.equals(estimate, taskToExt.estimate) &&
                 Objects.equals(parentId, taskToExt.parentId) &&
                 Objects.equals(projectId, taskToExt.projectId) &&
-                Objects.equals(sprintId, taskToExt.sprintId);
+                Objects.equals(sprintId, taskToExt.sprintId) &&
+                Objects.equals(tags, taskToExt.tags);
     }
 }

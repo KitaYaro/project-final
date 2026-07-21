@@ -3,6 +3,7 @@ package com.javarush.jira.bugtracking.sprint;
 import com.javarush.jira.bugtracking.Handlers;
 import com.javarush.jira.bugtracking.project.ProjectRepository;
 import com.javarush.jira.bugtracking.sprint.to.SprintTo;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Nullable;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
@@ -21,6 +22,7 @@ import static com.javarush.jira.bugtracking.ObjectType.SPRINT;
 import static com.javarush.jira.common.BaseHandler.REST_URL;
 import static com.javarush.jira.common.BaseHandler.createdResponse;
 
+@Tag(name = "Sprints", description = "Sprints - operation for sprints")
 @RestController
 @Validated
 @RequestMapping(value = REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)

@@ -1,6 +1,7 @@
 package com.javarush.jira.common.internal.config;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.thymeleaf.spring6.SpringTemplateEngine;
@@ -17,8 +18,9 @@ public class ThymeleafConfig {
 
     @Bean
     // Attention: with TemplateEngine clear cache doesn't work
-    public SpringTemplateEngine thymeleafTemplateEngine() {
+    public SpringTemplateEngine thymeleafTemplateEngine(MessageSource messageSource) {
         SpringTemplateEngine engine = new SpringTemplateEngine();
+        engine.setMessageSource(messageSource);
         FileTemplateResolver viewResolver = createTemplateResolver("./resources/view/");
         viewResolver.setCheckExistence(true);
         viewResolver.setOrder(1);

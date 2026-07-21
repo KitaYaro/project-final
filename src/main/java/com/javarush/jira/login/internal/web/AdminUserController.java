@@ -5,6 +5,7 @@ import com.javarush.jira.common.util.validation.View;
 import com.javarush.jira.login.User;
 import com.javarush.jira.login.UserTo;
 import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.Size;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.data.domain.Sort;
@@ -18,6 +19,7 @@ import java.util.List;
 
 import static com.javarush.jira.common.BaseHandler.createdResponse;
 
+@Tag(name = "Admin", description = "User administration")
 @Validated
 @RestController
 @RequestMapping(value = AdminUserController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)

@@ -2,12 +2,14 @@ package com.javarush.jira.profile.internal.web;
 
 import com.javarush.jira.login.AuthUser;
 import com.javarush.jira.profile.ProfileTo;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Profile", description = "User Profile Management")
 @RestController
 @RequestMapping(value = ProfileRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class ProfileRestController extends AbstractProfileController {

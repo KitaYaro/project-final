@@ -2,6 +2,7 @@ package com.javarush.jira.bugtracking.attachment;
 
 import com.javarush.jira.bugtracking.ObjectType;
 import com.javarush.jira.login.AuthUser;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
@@ -17,6 +18,7 @@ import java.util.List;
 
 import static com.javarush.jira.common.BaseHandler.createdResponse;
 
+@Tag(name = "Attachments", description = "User administration")
 @RestController
 @RequestMapping(value = AttachmentController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor

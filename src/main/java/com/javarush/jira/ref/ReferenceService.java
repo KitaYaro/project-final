@@ -58,7 +58,11 @@ public class ReferenceService {
         refSelect = references.stream()
                 .collect(Collectors.groupingBy(RefTo::getRefType,
                         Collectors.collectingAndThen(Collectors.toMap(RefTo::getCode, Function.identity(), (ref1, ref2) -> ref1, LinkedHashMap::new), Collections::unmodifiableMap)));
+    }
 
+    public void refreshCache() {
+        log.info("refresh cache");
+        initialize();
     }
 
     public void updateRefs(RefType type) {

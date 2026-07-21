@@ -5,6 +5,7 @@ import com.javarush.jira.common.util.validation.View;
 import com.javarush.jira.login.AuthUser;
 import com.javarush.jira.login.User;
 import com.javarush.jira.login.UserTo;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.Size;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import static com.javarush.jira.common.BaseHandler.createdResponse;
 
+@Tag(name = "Users", description = "User management")
 @Validated
 @RestController
 @RequestMapping(UserController.REST_URL)

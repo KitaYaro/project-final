@@ -20,13 +20,7 @@ import org.springframework.context.annotation.Configuration;
         info = @Info(
                 title = "REST API documentation",
                 version = "1.0",
-                description = """
-                        <a href='http://localhost/'>JavaRush Jira application</a><br>
-                        <p><b>Тестовые креденшелы:</b><br>
-                        - user@gmail.com / password<br>
-                        - admin@gmail.com / admin<br>
-                        - guest@gmail.com / guest</p>
-                        """,
+                description = "JiraRush - mini-JIRA application",
                 contact = @Contact(url = "https://javarush.com/about/contacts", email = "support@javarush.com")
         ),
         servers = {
